@@ -1,11 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav>
     <div class="container">
         <ul>
             <li><a href="../index.jsp">🏠 Trang chủ</a></li>
-            <li><a href="../pages/register.jsp">📝 Đăng ký</a></li>
-            <li><a href="../pages/classes.jsp">🏃‍♀️ Lớp học</a></li>
-            <li><a href="../pages/members.jsp">👥 Nhóm</a></li>
-            <li><a href="../pages/contact.jsp">📞 Liên hệ</a></li>
+            <li><a href="register.jsp">📝 Đăng ký</a></li>
+            <li><a href="classes.jsp">🏃‍♀️ Lớp học</a></li>
+            <li><a href="members.jsp">📋 Danh sách lớp</a></li>
+            <li><a href="contact.jsp">📞 Liên hệ</a></li>
             <li><a href="../admin/login.jsp" style="margin-left: auto;">⚙️ Admin</a></li>
         </ul>
     </div>

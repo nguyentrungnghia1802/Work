@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoga/Gym Center - Trang chủ</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/main.js" defer></script>
     </head>
 
     <body>
         <nav>
             <div class="container">
                 <ul>
-                    <li><a href="./index.jsp">🏠 Trang chủ</a></li>
-                    <li><a href=".pages/register.jsp">📝 Đăng ký</a></li>
-                    <li><a href="./pages/classes.jsp">🏃‍♀️ Lớp học</a></li>
-                    <li><a href="./pages/members.jsp">👥 Nhóm</a></li>
-                    <li><a href="./pages/contact.jsp">📞 Liên hệ</a></li>
-                    <li><a href="./admin/login.jsp" style="margin-left: auto;">⚙️ Admin</a></li>
+                    <li><a href="index.jsp">🏠 Trang chủ</a></li>
+                    <li><a href="pages/register.jsp">📝 Đăng ký</a></li>
+                    <li><a href="pages/classes.jsp">🏃‍♀️ Lớp học</a></li>
+                    <li><a href="pages/members.jsp">� Danh sách lớp</a></li>
+                    <li><a href="pages/contact.jsp">📞 Liên hệ</a></li>
+                    <li><a href="admin/login.jsp" style="margin-left: auto;">⚙️ Admin</a></li>
                 </ul>
             </div>
         </nav>
@@ -28,7 +29,7 @@
                     <section class="hero">
                         <h2>Chào mừng đến với Yoga/Gym Center</h2>
                         <p>Khám phá hành trình tìm lại sự cân bằng và khỏe mạnh cho cơ thể và tâm hồn</p>
-                        <a href="./pages/register.jsp" class="btn btn-primary">Đăng ký ngay</a>
+                        <a href="pages/register.jsp" class="btn btn-primary">Đăng ký ngay</a>
                     </section>
 
                     <section class="features">
@@ -72,7 +73,7 @@
                 </div>
             </main>
 
-            <%@ include file="./components/footer.jspf" %>
+            <%@ include file="components/footer.jspf" %>
     </body>
 
     </html>

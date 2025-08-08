@@ -6,30 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập Admin - Yoga/Gym Center</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        .login-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .login-card {
-            max-width: 400px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        .login-title {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -42,7 +19,7 @@
                 </div>
             <% } %>
             
-            <form action="../LoginServlet" method="post">
+            <form action="dashboard.jsp" method="post">
                 <div class="form-group">
                     <label for="username">👤 Tên đăng nhập</label>
                     <input type="text" id="username" name="username" required 
