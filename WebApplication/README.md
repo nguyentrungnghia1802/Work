@@ -2,7 +2,7 @@
 
 ## Tổng quan dự án
 
-Đây là một ứng dụng web Java sử dụng **Servlet** và **JSP** để xử lý upload file, đọc nội dung file, lưu text và tải file về. Dự án được phát triển trên **NetBeans IDE** và chạy trên **Apache Tomcat**.
+Là một ứng dụng web Java sử dụng **Servlet** và **JSP** để xử lý upload file, đọc nội dung file, lưu text và tải file về. Dự án được phát triển trên **NetBeans IDE** và chạy trên **Apache Tomcat**.
 
 ## Cấu trúc dự án
 
@@ -192,32 +192,3 @@ index.html → index1.jsp → SaveTextServlet (POST) → result1.jsp → SaveTex
 - Hiển thị nội dung file rõ ràng
 - Nút tải về và quay lại
 
-## Troubleshooting
-
-### Lỗi thường gặp
-1. **404 Not Found**: Kiểm tra URL mapping trong servlet
-2. **Encoding issues**: Đảm bảo UTF-8 trong tất cả các file
-3. **File upload fail**: Kiểm tra `@MultipartConfig` annotation
-
-### Debug
-- Kiểm tra console log của Tomcat
-- Verify servlet URL patterns
-- Test với file nhỏ trước
-
-## Phát triển thêm
-
-### Tính năng có thể thêm
-- Upload multiple files
-- File type validation
-- File size limit
-- User authentication
-- Database integration
-- File management interface
-
-### Cải thiện
-- Responsive design cho mobile
-- Error messages user-friendly hơn
-- Progress bar cho upload
-- File preview trước khi upload
-
-Dự án này hoàn thành đầy đủ yêu cầu của bài tập về xử lý file trong Java Web, bao gồm upload, đọc, lưu và tải file với giao diện thân thiện và code clean, dễ maintain.
