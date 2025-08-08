@@ -1,30 +1,78 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
-<head>
+    <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoga/Gym Center - Trang chủ</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Yoga/Gym Center</h1>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body>
         <nav>
-            <a href="index.jsp">Trang chủ</a>
-            <a href="register.jsp">Đăng ký lớp học</a>
-            <a href="classes.jsp">Danh sách lớp học</a>
-            <a href="members.jsp">Thành viên nhóm</a>
-            <a href="contact.jsp">Liên hệ</a>
-            <a href="admin/login.jsp" style="float:right">Admin</a>
+            <div class="container">
+                <ul>
+                    <li><a href="./index.jsp">🏠 Trang chủ</a></li>
+                    <li><a href=".pages/register.jsp">📝 Đăng ký</a></li>
+                    <li><a href="./pages/classes.jsp">🏃‍♀️ Lớp học</a></li>
+                    <li><a href="./pages/members.jsp">👥 Nhóm</a></li>
+                    <li><a href="./pages/contact.jsp">📞 Liên hệ</a></li>
+                    <li><a href="./admin/login.jsp" style="margin-left: auto;">⚙️ Admin</a></li>
+                </ul>
+            </div>
         </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Chào mừng đến với trung tâm Yoga/Gym!</h2>
-            <p>Đăng ký lớp học, xem lịch học, giá gói tập và nhiều thông tin hữu ích khác.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Yoga/Gym Center</p>
-    </footer>
-</body>
-</html>
+
+            <main>
+                <div class="container">
+                    <section class="hero">
+                        <h2>Chào mừng đến với Yoga/Gym Center</h2>
+                        <p>Khám phá hành trình tìm lại sự cân bằng và khỏe mạnh cho cơ thể và tâm hồn</p>
+                        <a href="./pages/register.jsp" class="btn btn-primary">Đăng ký ngay</a>
+                    </section>
+
+                    <section class="features">
+                        <div class="feature">
+                            <h3>🧘‍♀️ Yoga Chuyên nghiệp</h3>
+                            <p>Các lớp Yoga từ cơ bản đến nâng cao với giảng viên có chứng chỉ quốc tế</p>
+                        </div>
+                        <div class="feature">
+                            <h3>💪 Phòng tập Gym hiện đại</h3>
+                            <p>Trang thiết bị tập luyện hiện đại, đa dạng phục vụ mọi nhu cầu tập luyện</p>
+                        </div>
+                        <div class="feature">
+                            <h3>⏰ Lịch học linh hoạt</h3>
+                            <p>Đa dạng khung giờ từ sáng sớm đến tối muộn, phù hợp mọi lịch trình</p>
+                        </div>
+                        <div class="feature">
+                            <h3>👨‍⚕️ Hỗ trợ chuyên môn</h3>
+                            <p>Đội ngũ huấn luyện viên chuyên nghiệp, tận tâm hỗ trợ học viên</p>
+                        </div>
+                    </section>
+
+                    <section class="card">
+                        <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">Tại sao chọn chúng tôi?
+                        </h2>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div style="text-align: center;">
+                                <h4>🏆 Kinh nghiệm 10+ năm</h4>
+                                <p>Hơn 10 năm hoạt động và phát triển trong lĩnh vực Yoga/Gym</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <h4>👥 Cộng đồng 1000+ thành viên</h4>
+                                <p>Gia nhập cộng đồng những người yêu thích sức khỏe và thể thao</p>
+                            </div>
+                            <div style="text-align: center;">
+                                <h4>💰 Giá cả hợp lý</h4>
+                                <p>Các gói tập đa dạng với mức giá phù hợp mọi đối tượng</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <%@ include file="./components/footer.jspf" %>
+    </body>
+
+    </html>

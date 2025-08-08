@@ -1,11 +1,9 @@
-package java.controller;
+package controller;
 
 import java.io.*;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
-@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -25,10 +23,11 @@ public class LoginServlet extends HttpServlet {
         if(valid) {
             HttpSession session = request.getSession();
             session.setAttribute("admin", username);
-            response.sendRedirect("admin/dashboard.jsp");
+            // Redirect context-relative to avoid path issues
+            response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
         } else {
             request.setAttribute("errorMsg", "Sai tài khoản hoặc mật khẩu!");
-            request.getRequestDispatcher("admin/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/admin/login.jsp").forward(request, response);
         }
     }
 }

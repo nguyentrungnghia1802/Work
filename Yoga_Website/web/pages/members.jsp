@@ -3,20 +3,11 @@
 <html>
 <head>
     <title>Thành viên nhóm</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="members.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/members.js"></script>
 </head>
 <body>
-<header>
-    <h1>Thành viên nhóm</h1>
-    <nav>
-        <a href="index.jsp">Trang chủ</a>
-        <a href="register.jsp">Đăng ký lớp học</a>
-        <a href="classes.jsp">Danh sách lớp học</a>
-        <a href="members.jsp">Thành viên nhóm</a>
-        <a href="contact.jsp">Liên hệ</a>
-    </nav>
-</header>
+<%@ include file="../components/header.jspf" %>
 <main>
     <div class="member-list">
         <!-- Thêm thông tin thành viên nhóm tại đây -->
@@ -30,8 +21,6 @@
         <img id="zoomImg" src="" alt="Zoom">
     </div>
 </main>
-<footer>
-    <p>&copy; 2025 Yoga/Gym Center</p>
-</footer>
+<%@ include file="../components/footer.jspf" %>
 </body>
 </html>

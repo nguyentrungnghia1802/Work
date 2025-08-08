@@ -1,27 +1,26 @@
-package java.controller;
+package controller;
 
-import java.io.*;
+import dao.RegistrationDAO;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-import java.util.*;
+import java.io.IOException;
 
-@WebServlet("/DeleteRegistrationServlet")
 public class DeleteRegistrationServlet extends HttpServlet {
+    private RegistrationDAO registrationDAO;
+
+    @Override
+    public void init() throws ServletException {
+        registrationDAO = new RegistrationDAO();
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        String path = getServletContext().getRealPath("/WEB-INF/registrations.txt");
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line; int idx = 0;
-            while((line = br.readLine()) != null) {
-                if(!String.valueOf(idx).equals(id)) lines.add(line);
-                idx++;
-            }
+        String idStr = request.getParameter("id");
+        try {
+            int id = Integer.parseInt(idStr);
+            boolean success = registrationDAO.deleteRegistration(id);
+            response.setStatus(success ? 200 : 500);
+        } catch (Exception e) {
+            response.setStatus(500);
         }
-        try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
-            for(String l : lines) out.println(l);
-        }
-        response.setStatus(200);
     }
 }

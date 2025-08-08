@@ -1,1 +1,0 @@
-java.controller.AdminListServlet
