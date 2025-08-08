@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển trang</title>
+    <style>
+        body {
+            background: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #333;
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 2px 8px #0008;
+            text-align: center;
+        }
+        h2 {
+            color: #ffd700;
+        }
+        .btn {
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 28px;
+            font-size: 1.1em;
+            margin: 16px 8px 0 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #fff200;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Chọn trang để chuyển hướng</h2>
+        <button type="button" class="btn" onclick="location.href='index.jsp'">Trang Đọc File</button>
+        <button type="button" class="btn" onclick="location.href='index1.jsp'">Trang Ghi và Tải file</button>
+    </div>
+</body>
+</html>
