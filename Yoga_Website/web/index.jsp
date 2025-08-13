@@ -11,18 +11,75 @@
     </head>
 
     <body>
-        <nav>
+        <nav class="main-nav">
             <div class="container">
-                <ul>
+                <div class="nav-header" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-weight: bold; color: #667eea; font-size: 1.2rem;">Yoga/Gym Center</span>
+                    <button class="nav-toggle" aria-label="Mở menu" onclick="toggleMainNav()"
+                        style="background: none; border: none; font-size: 2rem; cursor: pointer; display: none;">
+                        &#9776;
+                    </button>
+                </div>
+                <ul class="nav-list"
+                    style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0;">
                     <li><a href="index.jsp">🏠 Trang chủ</a></li>
                     <li><a href="pages/register.jsp">📝 Đăng ký</a></li>
                     <li><a href="pages/classes.jsp">🏃‍♀️ Lớp học</a></li>
-                    <li><a href="pages/members.jsp">� Danh sách lớp</a></li>
+                    <li><a href="pages/members.jsp">📋 Danh sách lớp</a></li>
                     <li><a href="pages/contact.jsp">📞 Liên hệ</a></li>
-                    <li><a href="admin/login.jsp" style="margin-left: auto;">⚙️ Admin</a></li>
+                    <li style="margin-left:auto;"><a href="admin/login.jsp" class="btn btn-danger">⚙️ Admin</a></li>
                 </ul>
             </div>
         </nav>
+        <script>
+        function toggleMainNav() {
+            var navList = document.querySelector('.main-nav .nav-list');
+            navList.style.display = (navList.style.display === 'flex' || navList.style.display === '') ? 'block' : 'flex';
+        }
+        function handleMainNavResize() {
+            var navToggle = document.querySelector('.main-nav .nav-toggle');
+            var navList = document.querySelector('.main-nav .nav-list');
+            if(window.innerWidth <= 768) {
+                navToggle.style.display = 'block';
+                navList.style.display = 'none';
+            } else {
+                navToggle.style.display = 'none';
+                navList.style.display = 'flex';
+            }
+        }
+        window.addEventListener('resize', handleMainNavResize);
+        document.addEventListener('DOMContentLoaded', handleMainNavResize);
+        </script>
+        <style>
+        .main-nav .container {
+            padding: 0 10px;
+            position: relative;
+        }
+        .main-nav .nav-list {
+            transition: all 0.3s;
+        }
+        @media (max-width: 768px) {
+            .main-nav .nav-list {
+                flex-direction: column;
+                gap: 0;
+                background: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                border-radius: 10px;
+                position: absolute;
+                top: 55px;
+                left: 10px;
+                right: 10px;
+                z-index: 100;
+                padding: 10px 0;
+            }
+            .main-nav .nav-list li {
+                margin: 10px 0;
+            }
+            .main-nav .nav-toggle {
+                display: block !important;
+            }
+        }
+        </style>
 
             <main>
                 <div class="container">
