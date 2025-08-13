@@ -1,0 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<nav class="admin-nav">
+    <div class="container">
+        <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0;">
+            <li><a href="dashboard.jsp" class="btn">📊 Dashboard</a></li>
+            <li><a href="register.jsp" class="btn">📝 Quản lý Đơn đăng ký</a></li>
+            <li><a href="teacher.jsp" class="btn">👨‍🏫 Quản lý Giáo viên</a></li>
+            <li><a href="class.jsp" class="btn">🏃‍♀️ Quản lý Lớp học</a></li>
+            <li style="margin-left:auto;"><a href="login.jsp" class="btn btn-danger">🚪 Đăng xuất</a></li>
+        </ul>
+    </div>
+</nav>

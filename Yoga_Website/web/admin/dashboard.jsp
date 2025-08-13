@@ -10,14 +10,7 @@
     <script src="../assets/js/dashboard.js"></script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <div class="dashboard-header">
-            <h1 style="color: #667eea; margin: 0;">⚙️ Dashboard Admin</h1>
-            <div>
-                <a href="dashboard.jsp" class="btn" style="margin-right: 10px;">📊 Dashboard</a>
-                <a href="login.jsp" class="btn btn-danger">🚪 Đăng xuất</a>
-            </div>
-        </div>
+    <%@ include file="../components/admin_nav.jspf" %>
 
         <!-- Thống kê tổng quan -->
         <div class="stats-grid">
