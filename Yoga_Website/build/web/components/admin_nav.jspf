@@ -12,7 +12,7 @@
             <li><a href="register.jsp" class="btn">📝 Quản lý Đơn đăng ký</a></li>
             <li><a href="teacher.jsp" class="btn">👨‍🏫 Quản lý Giáo viên</a></li>
             <li><a href="class.jsp" class="btn">🏃‍♀️ Quản lý Lớp học</a></li>
-            <li style="margin-left:auto;"><a href="login.jsp" class="btn btn-danger">🚪 Đăng xuất</a></li>
+            <li style="margin-left:auto;"><a href="../login.jsp" class="btn btn-danger">🚪 Đăng xuất</a></li>
         </ul>
     </div>
 </nav>

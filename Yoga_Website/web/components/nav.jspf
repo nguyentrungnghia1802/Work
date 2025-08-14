@@ -8,12 +8,12 @@
             </button>
         </div>
         <ul class="nav-list" style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0;">
-            <li><a href="../index.jsp">🏠 Trang chủ</a></li>
+            <li><a href="dashboard.jsp">🏠 Trang chủ</a></li>
             <li><a href="register.jsp">📝 Đăng ký</a></li>
             <li><a href="classes.jsp">🏃‍♀️ Lớp học</a></li>
             <li><a href="members.jsp">📋 Danh sách lớp</a></li>
             <li><a href="contact.jsp">📞 Liên hệ</a></li>
-            <li style="margin-left:auto;"><a href="../admin/login.jsp" class="btn btn-danger">⚙️ Admin</a></li>
+            <li class="nav-login-btn"><a href="../login.jsp" class="btn btn-login">🔙 Đăng nhập</a></li>
         </ul>
     </div>
 </nav>
@@ -43,6 +43,28 @@ document.addEventListener('DOMContentLoaded', handleMainNavResize);
 }
 .main-nav .nav-list {
     transition: all 0.3s;
+}
+.btn-login {
+    background: linear-gradient(90deg, #667eea 0%, #5a67d8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-left: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-login:hover {
+    background: linear-gradient(90deg, #5a67d8 0%, #667eea 100%);
+    box-shadow: 0 4px 12px rgba(102,126,234,0.15);
+}
+.nav-login-btn {
+    display: flex;
+    align-items: center;
 }
 @media (max-width: 768px) {
     .main-nav .nav-list {

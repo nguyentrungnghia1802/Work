@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập Admin - Yoga/Gym Center</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -19,7 +19,7 @@
                 </div>
             <% } %>
             
-            <form action="dashboard.jsp" method="post">
+            <form id="loginForm" method="post">
                 <div class="form-group">
                     <label for="username">👤 Tên đăng nhập</label>
                     <input type="text" id="username" name="username" required 
@@ -36,14 +36,26 @@
                     🚀 Đăng nhập
                 </button>
             </form>
+            <button onclick="window.location.href='./pages/dashboard.jsp'" class="btn btn-secondary" style="width: 100%; margin-top: 10px;">Chuyển sang Dashboard người dùng</button>
+
+            <script>
+            document.getElementById('loginForm').onsubmit = function(e) {
+                e.preventDefault();
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                if(username === 'admin' && password === '123456') {
+                    window.location.href = './admin/dashboard.jsp';
+                } else {
+                    window.location.href = './pages/dashboard.jsp';
+                }
+            };
+            </script>
+            </form>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e1e1e1;">
                 <p style="color: #666; font-size: 14px;">
                     💡 <strong>Demo:</strong> admin / 123456
                 </p>
-                <a href="../index.jsp" style="color: #667eea; text-decoration: none;">
-                    ← Quay về trang chủ
-                </a>
             </div>
         </div>
     </div>
