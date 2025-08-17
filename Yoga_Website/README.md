@@ -4,14 +4,8 @@
 このウェブサイトはヨガ・ジムセンター向けのインターフェースであり、JSP/Servlet、HTML/CSS、純粋なJavaScriptで構築されています。ユーザー体験、滑らかなアニメーション、再利用可能なコンポーネント構造に重点を置いています。
 
 ### デモ
-- ホーム: `http://localhost:8080/Yoga_Website/`
-- クラス登録: `http://localhost:8080/Yoga_Website/pages/register.jsp`
-- クラス一覧: `http://localhost:8080/Yoga_Website/pages/classes.jsp`
-- メンバー一覧: `http://localhost:8080/Yoga_Website/pages/members.jsp`
-- お問い合わせ: `http://localhost:8080/Yoga_Website/pages/contact.jsp`
-- 開発チーム: `http://localhost:8080/Yoga_Website/pages/team.jsp`
-- 管理者ログイン: `http://localhost:8080/Yoga_Website/admin/login.jsp`
-- 管理者ダッシュボード: `http://localhost:8080/Yoga_Website/admin/dashboard.jsp`
+- デモ: `https://www.youtube.com/watch?v=lTqY_-PNv5o`
+
 
 ### 使用技術
 - **JSP/JSTL**: 動的な画面構築、コンポーネントのインクルード (`header.jspf`, `footer.jspf`, `nav.jspf`, `alert.jspf`, `pagination.jspf` など)
