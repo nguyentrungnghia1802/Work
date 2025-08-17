@@ -4,7 +4,7 @@
 このウェブサイトはヨガ・ジムセンター向けのインターフェースであり、JSP/Servlet、HTML/CSS、純粋なJavaScriptで構築されています。ユーザー体験、滑らかなアニメーション、再利用可能なコンポーネント構造に重点を置いています。
 
 ### デモ
-- デモ: `https://www.youtube.com/watch?v=lTqY_-PNv5o`
+[![デモ](https://img.shields.io/badge/VideoDemo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=lTqY_-PNv5o)
 
 
 ### 使用技術
