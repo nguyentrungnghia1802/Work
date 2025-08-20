@@ -13,6 +13,7 @@
             <li><a href="classes.jsp">🏃‍♀️ Lớp học</a></li>
             <li><a href="members.jsp">📋 Danh sách lớp</a></li>
             <li><a href="contact.jsp">📞 Liên hệ</a></li>
+            <li><a href="authors.jsp">👥 Tác giả</a></li>
             <li class="nav-login-btn"><a href="../login.jsp" class="btn btn-login">🔙 Đăng nhập</a></li>
         </ul>
     </div>
