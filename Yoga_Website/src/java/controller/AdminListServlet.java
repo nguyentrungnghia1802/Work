@@ -3,36 +3,29 @@ package controller;
 import dao.RegistrationDAO;
 import model.Registration;
 import java.io.IOException;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import java.util.*;
 
 public class AdminListServlet extends HttpServlet {
-    private RegistrationDAO registrationDAO;
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            dao.RegistrationDAO regDao = new dao.RegistrationDAO();
+            dao.ClassDAO classDao = new dao.ClassDAO();
+            dao.TeacherDAO teacherDao = new dao.TeacherDAO();
 
-    @Override
-    public void init() throws ServletException {
-        registrationDAO = new RegistrationDAO();
-    }
+            List<model.Registration> registrations = regDao.getAllRegistrations();
+            List<model.Class> classes = classDao.getAllClasses();
+            List<model.Teacher> teachers = teacherDao.getAllTeachers();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String search = request.getParameter("search");
-        List<Registration> list;
-        if (search != null && !search.isEmpty()) {
-            list = registrationDAO.searchRegistrations(search);
-        } else {
-            list = registrationDAO.getAllRegistrations();
+            request.setAttribute("registrations", registrations);
+            request.setAttribute("classes", classes);
+            request.setAttribute("teachers", teachers);
+            request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
+        } catch (Exception e) {
+            request.setAttribute("errorMsg", "Lỗi hệ thống: " + e.getMessage());
+            request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
         }
-        // Phân trang
-        int pageSize = 10;
-        int page = 1;
-        if(request.getParameter("page") != null) page = Integer.parseInt(request.getParameter("page"));
-        int total = list.size();
-        int pageCount = (int)Math.ceil(total/(double)pageSize);
-        int from = (page-1)*pageSize, to = Math.min(page*pageSize, total);
-        request.setAttribute("pageCount", pageCount);
-        request.setAttribute("currentPage", page);
-        request.setAttribute("registrations", list.subList(from, to));
-        request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
     }
 }
