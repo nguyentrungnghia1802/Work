@@ -10,6 +10,11 @@ import java.util.*;
 public class AdminListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("admin") == null) {
+            response.sendRedirect(request.getContextPath() + "/admin/login.jsp");
+            return;
+        }
         try {
             dao.RegistrationDAO regDao = new dao.RegistrationDAO();
             dao.ClassDAO classDao = new dao.ClassDAO();
@@ -24,7 +29,7 @@ public class AdminListServlet extends HttpServlet {
             request.setAttribute("teachers", teachers);
             request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
         } catch (Exception e) {
-            request.setAttribute("errorMsg", "Lỗi hệ thống: " + e.getMessage());
+            request.setAttribute("errorMsg", "System error: " + e.getMessage());
             request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
         }
     }

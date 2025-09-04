@@ -52,17 +52,17 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
             
-            // Tạo đối tượng Registration
-            Registration registration = new Registration(fullname, email, phone, className, packageType, note);
-            
-            // Lưu vào database
+            // Hash email as password for demo (should use real password in production)
+            String hashedEmail = Integer.toHexString(email.hashCode());
+            Registration registration = new Registration(fullname, hashedEmail, phone, className, packageType, note);
+
             boolean success = registrationDAO.addRegistration(registration);
-            
+
             if (success) {
-                request.setAttribute("successMsg", "Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.");
+                request.setAttribute("successMsg", "Registration successful! We will contact you soon.");
                 request.getRequestDispatcher("pages/register.jsp").forward(request, response);
             } else {
-                request.setAttribute("errorMsg", "Có lỗi xảy ra khi đăng ký. Vui lòng thử lại!");
+                request.setAttribute("errorMsg", "An error occurred during registration. Please try again!");
                 request.getRequestDispatcher("pages/register.jsp").forward(request, response);
             }
             

@@ -8,14 +8,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        // Xác thực mạnh hơn: kiểm tra file users.txt
         String path = getServletContext().getRealPath("/WEB-INF/users.txt");
         boolean valid = false;
+        String hashedInput = Integer.toHexString(password.hashCode());
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while((line = br.readLine()) != null) {
                 String[] arr = line.split(",");
-                if(arr.length >= 2 && arr[0].equals(username) && arr[1].equals(password)) {
+                if(arr.length >= 2 && arr[0].equals(username) && arr[1].equals(hashedInput)) {
                     valid = true; break;
                 }
             }
@@ -23,10 +23,9 @@ public class LoginServlet extends HttpServlet {
         if(valid) {
             HttpSession session = request.getSession();
             session.setAttribute("admin", username);
-            // Redirect context-relative to avoid path issues
             response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
         } else {
-            request.setAttribute("errorMsg", "Sai tài khoản hoặc mật khẩu!");
+            request.setAttribute("errorMsg", "Invalid username or password!");
             request.getRequestDispatcher("/admin/login.jsp").forward(request, response);
         }
     }

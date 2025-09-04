@@ -14,6 +14,11 @@ public class DeleteRegistrationServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("admin") == null) {
+            response.setStatus(401); // Unauthorized
+            return;
+        }
         String idStr = request.getParameter("id");
         try {
             int id = Integer.parseInt(idStr);
